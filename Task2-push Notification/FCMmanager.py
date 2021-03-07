@@ -1,7 +1,7 @@
 import firebase_admin
-from firebase_admin import credentials
+from firebase_admin import credentials , messaging
 
-cred = credentials.Certificate("/home/gowthamkishoreindukuri/Desktop/projects/pushnotifications/serviceAccountKey.json")
+cred = credentials.Certificate("/home/gowthamkishoreindukuri/Desktop/projects/Munchin-/Task2-push Notification/serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
 
 def sendPush(title, msg, registration_token, dataObject=None):
@@ -19,4 +19,4 @@ def sendPush(title, msg, registration_token, dataObject=None):
     # registration token.
     response = messaging.send_multicast(message)
     # Response is a message ID string.
-    print('Successfully sent message:', response)
+    print('Successfully sent message:', response) 
